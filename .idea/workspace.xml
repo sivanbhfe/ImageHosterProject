@@ -48,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/service/CommentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state relative-caret-position="120">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -328,7 +328,7 @@
       <workItem from="1562632666748" duration="1694000" />
       <workItem from="1562718661524" duration="4740000" />
       <workItem from="1562725384636" duration="558000" />
-      <workItem from="1562805700309" duration="595000" />
+      <workItem from="1562805700309" duration="863000" />
     </task>
     <task id="LOCAL-00001" summary="Assignment commit 4 Testing commit to dev branch">
       <created>1562634641104</created>
@@ -337,11 +337,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562634641104</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Assignment commit 4 Testing commit to dev branch">
+      <created>1562806356037</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562806356037</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Assignment commit 5 Testing commit to dev branch">
+      <created>1562806388300</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562806388300</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12624000" />
+    <option name="totallyTimeSpent" value="12892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,7 +451,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Assignment commit 4 Testing commit to dev branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assignment commit 4 Testing commit to dev branch" />
+    <MESSAGE value="Assignment commit 5 Testing commit to dev branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment commit 5 Testing commit to dev branch" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/ImageHosterApplication.java">
@@ -658,8 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/service/CommentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="120">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
