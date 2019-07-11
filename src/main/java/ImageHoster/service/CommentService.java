@@ -9,7 +9,4 @@ public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
-
-
-
 }
