@@ -33,7 +33,6 @@ public class User {
     @JoinColumn(name = "profile_id")
     private UserProfile profile;
 
-
     //The 'users' table is referenced by the 'images' table
     //The table (primary key) is referenced by the 'user' field in the 'images' table
     //cascade = CascadeType.REMOVE specifies that if a record in 'users' table is deleted, then all the records in 'images' table associated to that particular record in 'users' table will be deleted first and then the record in the 'users' table will be deleted

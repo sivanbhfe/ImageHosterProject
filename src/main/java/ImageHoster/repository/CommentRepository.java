@@ -3,10 +3,8 @@ package ImageHoster.repository;
 import ImageHoster.model.Comment;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.*;
+import java.util.List;
 
 @Repository
 public class CommentRepository {
@@ -26,6 +24,13 @@ public class CommentRepository {
         }
 
         return comment;
+    }
+
+    public List<Comment> getAllComments() {
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Comment> query = em.createQuery("SELECT c from Comment c", Comment.class);
+        List<Comment> resultList = query.getResultList();
+        return resultList;
     }
 
 
