@@ -69,17 +69,17 @@ public class ImageController {
     }
 
     //Adding comments
-    @RequestMapping(name="/image/{id}/{title}/comments", method = RequestMethod.POST)
-    //@PathVariable("id") Integer id, @PathVariable("title") String title,
-    public String addComments(Comment comment, HttpSession session){
+    @RequestMapping(value="/image/{id}/{title}/comments", method = RequestMethod.POST)
+    public String addComments(@PathVariable("id") Integer id, @PathVariable("title") String title, Comment comment, HttpSession session){
+        commentService.createComment(comment);
         User user = (User) session.getAttribute("loggeduser");
         comment.setUser(user);
-        Image image = imageService.getImageById(9);
+        Image image = imageService.getImageById(id);
         comment.setImage(image);
         Date date = new Date();
         comment.setCreatedDate(date);
         commentService.createComment(comment);
-        return "redirect:/images/"+9+"/"+"Image3";
+        return "redirect:/images/"+id+"/"+title;
     }
 
 
