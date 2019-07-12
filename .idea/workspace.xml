@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1aeaee1d-9764-438a-97bb-ef616123a14a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageHoster/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageHoster/controller/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageHoster/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageHoster/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageHoster/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageHoster/model/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageHoster/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageHoster/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageHoster/controller/ImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageHoster/controller/ImageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageHoster/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageHoster/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageHoster/model/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageHoster/model/Image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageHoster/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageHoster/model/User.class" afterDir="false" />
-    </list>
+    <list default="true" id="1aeaee1d-9764-438a-97bb-ef616123a14a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,29 +11,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/image.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+            <state relative-caret-position="270">
+              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/controller/ImageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="74" column="62" lean-forward="true" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
+            <state relative-caret-position="167">
+              <caret line="66" column="56" lean-forward="true" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3749#3750#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/service/CommentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/repository/CommentRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,19 +55,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/service/ImageService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/model/Image.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="166">
+              <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3829#3830#0" expanded="true" />
+                <element signature="e#3860#3861#0" expanded="true" />
+                <element signature="e#3915#3916#0" expanded="true" />
+                <element signature="e#3955#3956#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/repository/ImageRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/model/Tag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="331">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/model/Comment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#610#611#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#675#676#0" expanded="true" />
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#875#876#0" expanded="true" />
+                <element signature="e#927#928#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#1002#1003#0" expanded="true" />
+                <element signature="e#1029#1030#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1130#1131#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+                <element signature="e#1233#1234#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,6 +201,30 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ImageHoster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ImageHoster" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ImageHoster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ImageHoster" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ImageHoster" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ImageHoster" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ImageHoster" type="b2602c69:ProjectViewProjectNode" />
@@ -312,11 +381,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21144000" />
+    <option name="totallyTimeSpent" value="21214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -328,7 +396,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.2777778" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.34150326" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -352,6 +420,41 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532943" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20261438" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32843137" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -499,8 +602,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/model/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state relative-caret-position="331">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,8 +646,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/repository/CommentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="84">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -550,11 +656,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/service/CommentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -581,10 +684,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
             <element signature="e#610#611#0" expanded="true" />
             <element signature="e#647#648#0" expanded="true" />
             <element signature="e#675#676#0" expanded="true" />
@@ -610,8 +714,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/model/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
+        <state relative-caret-position="166">
+          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3860#3861#0" expanded="true" />
+            <element signature="e#3915#3916#0" expanded="true" />
+            <element signature="e#3955#3956#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/images/image.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+        <state relative-caret-position="270">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -652,10 +763,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ImageHoster/controller/ImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="74" column="62" lean-forward="true" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
+        <state relative-caret-position="167">
+          <caret line="66" column="56" lean-forward="true" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3749#3750#0" expanded="true" />
           </folding>
         </state>
       </provider>
