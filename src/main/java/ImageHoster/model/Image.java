@@ -1,9 +1,7 @@
 package ImageHoster.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 //@Entity annotation specifies that the corresponding class is a JPA entity
@@ -11,7 +9,7 @@ import java.util.List;
 //@Table annotation provides more options to customize the mapping.
 //Here the name of the table to be created in the database is explicitly mentioned as 'images'. Hence the table named 'images' will be created in the database with all the columns mapped to all the attributes in 'Image' class
 @Table(name = "images")
-public class Image {
+public class Image   {
 
     //@Id annotation specifies that the corresponding attribute is a primary key
     @Id
@@ -52,7 +50,7 @@ public class Image {
     private List<Tag> tags = new ArrayList<>();
 
     @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    private List<Comment> comments = new ArrayList<>();
+    private List<Comment> comments = new ArrayList<Comment>();
 
     public Image() {
     }
@@ -131,6 +129,7 @@ public class Image {
     }
 
     public List<Comment> getComments() {
+
         return comments;
     }
 
