@@ -12,19 +12,19 @@ public class CommentRepository {
     @PersistenceUnit(name="imageHoster")
     private EntityManagerFactory emf;
 
-    public Comment createComment(Comment comment){
+    public Comment createComment(Comment newComment){
         EntityManager em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
         try{
             transaction.begin();
-            em.persist(comment);
+            em.merge(newComment);
             transaction.commit();
         } catch (Exception e){
             e.printStackTrace();
             transaction.rollback();
         }
 
-        return comment;
+        return newComment;
     }
 
     public List<Comment> getAllComments() {

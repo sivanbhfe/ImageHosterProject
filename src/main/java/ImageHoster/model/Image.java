@@ -1,7 +1,9 @@
 package ImageHoster.model;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 
 //@Entity annotation specifies that the corresponding class is a JPA entity
@@ -25,7 +27,7 @@ public class Image   {
     // Text is a Postgres specific column type that allows you to save
     // text based data that will be longer than 256 characters
     // this is a base64 encoded version of the image
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition ="TEXT")
     private String imageFile;
 
 
@@ -49,8 +51,8 @@ public class Image   {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Tag> tags = new ArrayList<>();
 
-    @OneToMany(mappedBy = "image", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Comment> comments = new ArrayList<Comment>();
+    @OneToMany(mappedBy = "image",cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+      private List<Comment> comments = new ArrayList<>();
 
     public Image() {
     }
@@ -69,9 +71,6 @@ public class Image   {
         this.description = description;
         this.date = date;
     }
-
-
-
     public Integer getId() {
         return id;
     }
@@ -133,7 +132,6 @@ public class Image   {
         return comments;
     }
 
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
+    public void setComments(List<Comment> comments) { this.comments = comments;}
+
 }
