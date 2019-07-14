@@ -126,20 +126,23 @@ public class ImageController {
     //This string is then displayed by 'edit.html' file as previous tags of an image
     @RequestMapping(value = "/editImage")
     public String editImage(@RequestParam("imageId") Integer imageId, Model model,HttpSession session) {
-        Image image = imageService.getImage(imageId);
+        Image editedImage = imageService.getImage(imageId);
         User user = (User) session.getAttribute("loggeduser");
-        String tags = convertTagsToString(image.getTags());
-        List<Comment> comments = image.getComments();
+        String tags = convertTagsToString(editedImage.getTags());
+        List<Comment> comments = editedImage.getComments();
         String error="Only the owner of the image can edit the image";
-        model.addAttribute("image", image);
+        model.addAttribute("image", editedImage);
         model.addAttribute("tags", tags);
         model.addAttribute("comments", comments);
-        if(image.getUser().getId()!=user.getId()) {
-            model.addAttribute("editError", error);
-            model.addAttribute("comments", comments);
-            return "images/image";
+        // Logic to check if user is the owner: moved to ImageService class
+        if(imageService.editByOwner(user, editedImage)) {
+            return "images/edit";
         }
-        return "images/edit";
+        //Failed Edit & Delete redirected image page was not displaying Tags and comments
+        //Did modification to fix that bug
+        model.addAttribute("editError", error);
+        model.addAttribute("tags", editedImage.getTags());
+        return "images/image";
     }
 
     //This controller method is called when the request pattern is of type 'images/edit' and also the incoming request is of PUT type
@@ -186,13 +189,19 @@ public class ImageController {
         Image deletedImage = imageService.getImage(imageId);
         String error ="Only the owner of the image can delete the image";
         model.addAttribute("image", deletedImage);
-    //Adding this comment to test git commit in dev branch
-        if(deletedImage.getUser().getId()!=user.getId()) {
-            model.addAttribute("deleteError", error);
-            return "images/image";
+        //Adding this comment to test git commit in dev branch
+        // Logic to check if user is the owner: moved to ImageService class
+        if(imageService.editByOwner(user, deletedImage)) {
+            imageService.deleteImage(imageId);
+            return "redirect:/images";
+
         }
-        imageService.deleteImage(imageId);
-        return "redirect:/images";
+        model.addAttribute("deleteError", error);
+        //Failed Edit & Delete redirected image page was not displaying Tags and comments
+        //Did modification to fix that bug
+        model.addAttribute("tags", deletedImage.getTags());
+        model.addAttribute("comments", deletedImage.getComments());
+        return "images/image";
     }
 
 
