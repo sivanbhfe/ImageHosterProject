@@ -32,4 +32,14 @@ public class UserService {
         }
     }
 
+    public boolean strongPassword(String password){
+        if (password.matches("(?=.*[0-9]).*") &&
+                (password.matches("(?=.*[a-z]).*") || password.matches("(?=.*[A-Z]).*")) &&
+                password.matches("(?=.*[~!@#$%^&*()_-]).*")
+        ) {
+            return true;
+        }
+            return false;
+   }
+
 }
