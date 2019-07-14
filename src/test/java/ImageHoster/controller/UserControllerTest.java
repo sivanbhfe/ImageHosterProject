@@ -62,7 +62,10 @@ public class UserControllerTest {
 
 
         this.mockMvc.perform(post("/users/registration")
-                .flashAttr("user", user)
+                // .flashAttr("username", user.getUsername())
+                .param("username",user.getUsername())
+                .param("password", user.getPassword())
+
         )
                 .andExpect(model().attribute("passwordTypeError", equalTo("Password must contain atleast 1 alphabet, 1 number & 1 special character")));
     }
@@ -83,7 +86,11 @@ public class UserControllerTest {
 
 
         this.mockMvc.perform(post("/users/registration")
-                .flashAttr("user", user)
+           //     .flashAttr("username",user.getUsername())
+                .param("username",user.getUsername())
+                .param("password", user.getPassword())
+
+
         )
                 .andExpect(view().name("users/login"))
                 .andExpect(content().string(containsString("Please Login:")));
