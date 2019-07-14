@@ -134,7 +134,7 @@ public class ImageController {
         model.addAttribute("image", editedImage);
         model.addAttribute("tags", tags);
         model.addAttribute("comments", comments);
-        // Logic to check if user is the owner: moved to ImageService class
+        // BusinessLogic to check if user is the owner: moved to ImageService class
         if(imageService.editByOwner(user, editedImage)) {
             return "images/edit";
         }
@@ -190,11 +190,10 @@ public class ImageController {
         String error ="Only the owner of the image can delete the image";
         model.addAttribute("image", deletedImage);
         //Adding this comment to test git commit in dev branch
-        // Logic to check if user is the owner: moved to ImageService class
+        // BusinessLogic to check if user is the owner: moved to ImageService class
         if(imageService.editByOwner(user, deletedImage)) {
             imageService.deleteImage(imageId);
             return "redirect:/images";
-
         }
         model.addAttribute("deleteError", error);
         //Failed Edit & Delete redirected image page was not displaying Tags and comments
