@@ -1,3 +1,4 @@
+
 package ImageHoster.controller;
 
 import ImageHoster.model.Image;
@@ -50,15 +51,16 @@ public class UserController {
 //        Pattern p2 = Pattern.compile("(?=.*[a-z]).*");
 //        Pattern p3 = Pattern.compile("(?=.*[A-Z]).*");
 //        Pattern p4 = Pattern.compile("(?=.*[~!@#$%^&*()_-]).*");
-        if (userService.strongPassword(password)) {
+        if (!userService.strongPassword(password)) {
+            String error = "Password must contain atleast 1 alphabet, 1 number & 1 special character";
+            model.addAttribute("passwordTypeError", error);
+            model.addAttribute("User", user);
+            return "users/registration";
+
+        } else {
             userService.registerUser(user);
-           // return "redirect:/users/login";
-            return "users/login";
+            return "redirect:/users/login";
         }
-        String error = "Password must contain atleast 1 alphabet, 1 number & 1 special character";
-        model.addAttribute("passwordTypeError", error);
-        model.addAttribute("User", user);
-        return "/users/registration";
     }
     //This controller method is called when the request pattern is of type 'users/login'
     @RequestMapping("users/login")
@@ -71,13 +73,14 @@ public class UserController {
     //If user with entered username and password exists in the database, add the logged in user in the Http Session and direct to user homepage displaying all the images in the application
     //If user with entered username and password does not exist in the database, redirect to the same login page
     @RequestMapping(value = "users/login", method = RequestMethod.POST)
-    public String loginUser(User user, HttpSession session) {
+    public String loginUser(User user, HttpSession session,Model model) {
         User existingUser = userService.login(user);
         if (existingUser != null) {
             session.setAttribute("loggeduser", existingUser);
             return "redirect:/images";
         } else {
-            return "users/login";
+            model.addAttribute("User", user);
+            return "users/registration";
         }
     }
 

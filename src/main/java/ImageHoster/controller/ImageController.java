@@ -120,14 +120,16 @@ public class ImageController {
         model.addAttribute("tags", tags);
         model.addAttribute("comments", comments);
         // BusinessLogic to check if user is the owner: moved to ImageService class
-        if(imageService.editByOwner(user, editedImage)) {
+        if(!imageService.editByOwner(user, editedImage)) {
+            //Failed Edit & Delete redirected image page was not displaying Tags and comments
+            //Did modification to fix that bug
+            model.addAttribute("editError", error);
+            model.addAttribute("tags", editedImage.getTags());
+            return "images/image";
+        } else {
+
             return "images/edit";
         }
-        //Failed Edit & Delete redirected image page was not displaying Tags and comments
-        //Did modification to fix that bug
-        model.addAttribute("editError", error);
-        model.addAttribute("tags", editedImage.getTags());
-        return "images/image";
     }
 
     //This controller method is called when the request pattern is of type 'images/edit' and also the incoming request is of PUT type
@@ -172,20 +174,21 @@ public class ImageController {
     public String deleteImageSubmit(@RequestParam(name = "imageId") Integer imageId, HttpSession session, Model model) {
         User user = (User) session.getAttribute("loggeduser");
         Image deletedImage = imageService.getImage(imageId);
-        String error ="Only the owner of the image can delete the image";
+        String error = "Only the owner of the image can delete the image";
         model.addAttribute("image", deletedImage);
         //Adding this comment to test git commit in dev branch
         // BusinessLogic to check if user is the owner: moved to ImageService class
-        if(imageService.editByOwner(user, deletedImage)) {
+        if (!imageService.editByOwner(user, deletedImage)) {
+            model.addAttribute("deleteError", error);
+            //Failed Edit & Delete redirected image page was not displaying Tags and comments
+            //Did modification to fix that bug
+            model.addAttribute("tags", deletedImage.getTags());
+            model.addAttribute("comments", deletedImage.getComments());
+            return "images/image";
+        } else {
             imageService.deleteImage(imageId);
             return "redirect:/images";
         }
-        model.addAttribute("deleteError", error);
-        //Failed Edit & Delete redirected image page was not displaying Tags and comments
-        //Did modification to fix that bug
-        model.addAttribute("tags", deletedImage.getTags());
-        model.addAttribute("comments", deletedImage.getComments());
-        return "images/image";
     }
 
 

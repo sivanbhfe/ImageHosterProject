@@ -81,7 +81,7 @@ public class UserControllerTest {
         userProfile.setMobileNumber("9876543210");
         user.setProfile(userProfile);
         user.setId(1);
-        user.setUsername("Abhi");
+        user.setUsername("Abhi11");
         user.setPassword("password1@");
 
 
@@ -119,8 +119,8 @@ public class UserControllerTest {
         this.mockMvc.perform(post("/users/login").session(session)
                 .flashAttr("user", userSignin)
         )
-                .andExpect(view().name("users/login"))
-                .andExpect(content().string(containsString("Please Login:")));
+                .andExpect(view().name("users/registration"))
+                .andExpect(content().string(containsString("Please Register:")));
     }
 
 
