@@ -62,7 +62,10 @@ public class UserControllerTest {
 
 
         this.mockMvc.perform(post("/users/registration")
-                .flashAttr("user", user)
+                // .flashAttr("username", user.getUsername())
+                .param("username",user.getUsername())
+                .param("password", user.getPassword())
+
         )
                 .andExpect(model().attribute("passwordTypeError", equalTo("Password must contain atleast 1 alphabet, 1 number & 1 special character")));
     }
@@ -78,12 +81,16 @@ public class UserControllerTest {
         userProfile.setMobileNumber("9876543210");
         user.setProfile(userProfile);
         user.setId(1);
-        user.setUsername("Abhi");
+        user.setUsername("Abhi11");
         user.setPassword("password1@");
 
 
         this.mockMvc.perform(post("/users/registration")
-                .flashAttr("user", user)
+           //     .flashAttr("username",user.getUsername())
+                .param("username",user.getUsername())
+                .param("password", user.getPassword())
+
+
         )
                 .andExpect(view().name("users/login"))
                 .andExpect(content().string(containsString("Please Login:")));
@@ -112,8 +119,8 @@ public class UserControllerTest {
         this.mockMvc.perform(post("/users/login").session(session)
                 .flashAttr("user", userSignin)
         )
-                .andExpect(view().name("users/login"))
-                .andExpect(content().string(containsString("Please Login:")));
+                .andExpect(view().name("users/registration"))
+                .andExpect(content().string(containsString("Please Register:")));
     }
 
 

@@ -68,22 +68,7 @@ public class ImageController {
         return "images/image";
     }
 
-    //Adding comments
-    @RequestMapping(value="/image/{id}/{title}/comments", method = RequestMethod.POST)
-    public String addComments(@PathVariable("id") Integer id, @PathVariable("title") String title, Comment newComment, HttpSession session){
-        User user = (User) session.getAttribute("loggeduser");
-        newComment.setUser(user);
-        Image image = imageService.getImageById(id);
-        newComment.setImage(image);
-        System.out.println("CREAM:"+newComment.getUser().getUsername());
-        System.out.println("CREAM:"+newComment.getText());
-        System.out.println("CREAM:"+newComment.getImage().getTitle());
-        Date date = new Date();
-        newComment.setCreatedDate(date);
-        System.out.println("CREAM:"+newComment.getCreatedDate().toString());
-        commentService.createComment(newComment);
-        return "redirect:/images/"+id+"/"+title;
-    }
+    //Adding comments function moved from here to CommentController
 
 
     //This controller method is called when the request pattern is of type 'images/upload'
@@ -126,20 +111,25 @@ public class ImageController {
     //This string is then displayed by 'edit.html' file as previous tags of an image
     @RequestMapping(value = "/editImage")
     public String editImage(@RequestParam("imageId") Integer imageId, Model model,HttpSession session) {
-        Image image = imageService.getImage(imageId);
+        Image editedImage = imageService.getImage(imageId);
         User user = (User) session.getAttribute("loggeduser");
-        String tags = convertTagsToString(image.getTags());
-        List<Comment> comments = image.getComments();
+        String tags = convertTagsToString(editedImage.getTags());
+        List<Comment> comments = editedImage.getComments();
         String error="Only the owner of the image can edit the image";
-        model.addAttribute("image", image);
+        model.addAttribute("image", editedImage);
         model.addAttribute("tags", tags);
         model.addAttribute("comments", comments);
-        if(image.getUser().getId()!=user.getId()) {
+        // BusinessLogic to check if user is the owner: moved to ImageService class
+        if(!imageService.editByOwner(user, editedImage)) {
+            //Failed Edit & Delete redirected image page was not displaying Tags and comments
+            //Did modification to fix that bug
             model.addAttribute("editError", error);
-            model.addAttribute("comments", comments);
+            model.addAttribute("tags", editedImage.getTags());
             return "images/image";
+        } else {
+
+            return "images/edit";
         }
-        return "images/edit";
     }
 
     //This controller method is called when the request pattern is of type 'images/edit' and also the incoming request is of PUT type
@@ -184,15 +174,21 @@ public class ImageController {
     public String deleteImageSubmit(@RequestParam(name = "imageId") Integer imageId, HttpSession session, Model model) {
         User user = (User) session.getAttribute("loggeduser");
         Image deletedImage = imageService.getImage(imageId);
-        String error ="Only the owner of the image can delete the image";
+        String error = "Only the owner of the image can delete the image";
         model.addAttribute("image", deletedImage);
-    //Adding this comment to test git commit in dev branch
-        if(deletedImage.getUser().getId()!=user.getId()) {
+        //Adding this comment to test git commit in dev branch
+        // BusinessLogic to check if user is the owner: moved to ImageService class
+        if (!imageService.editByOwner(user, deletedImage)) {
             model.addAttribute("deleteError", error);
+            //Failed Edit & Delete redirected image page was not displaying Tags and comments
+            //Did modification to fix that bug
+            model.addAttribute("tags", deletedImage.getTags());
+            model.addAttribute("comments", deletedImage.getComments());
             return "images/image";
+        } else {
+            imageService.deleteImage(imageId);
+            return "redirect:/images";
         }
-        imageService.deleteImage(imageId);
-        return "redirect:/images";
     }
 
 
